@@ -6,7 +6,7 @@ apply plugin: 'java'
 apply plugin: 'maven-publish'
 
 group = 'com.github.dima853'
-version = '1.0'
+version = '1.0.0'
 
 
 
@@ -18,7 +18,7 @@ java {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    implementation("com.github.dima853:suuid2:1.0")
+    implementation("com.github.dima853:suuid2:1.0.0")
 }
 
 test {
@@ -30,7 +30,7 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
             groupId = group
-            artifactId = 'названиеТвоегоПроекта' // Замени на название проекта
+            artifactId = 'suuid2' // Замени на название проекта
             version = version
         }
     }
