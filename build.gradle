@@ -8,8 +8,6 @@ apply plugin: 'maven-publish'
 group = 'com.github.dima853'
 version = '1.0.0'
 
-
-
 java {
     withSourcesJar()
     withJavadocJar()
