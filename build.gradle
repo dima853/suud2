@@ -30,13 +30,13 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
             groupId = group
-            artifactId = 'suuid2' // Замени на название проекта
+            artifactId = 'suuid2'
             version = version
         }
     }
 }
 
 repositories {
-    mavenCentral()  // Важно для разрешения зависимостей твоего проекта
+    mavenCentral()
 }
 

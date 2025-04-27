@@ -17,7 +17,7 @@ public class SUUID {
 
     private static final SecureRandom SECURE_RANDOM;
     private static final AtomicInteger generationCounter = new AtomicInteger(0);
-    private static int uuidByteLength = DEFAULT_UUID_BYTE_LENGTH; // Теперь это переменная
+    private static int uuidByteLength = DEFAULT_UUID_BYTE_LENGTH;
 
     static {
         try {
@@ -33,7 +33,6 @@ public class SUUID {
         }
     }
 
-    // Новый метод для установки длины UUID
     public static void setUuidByteLength(int length) {
         if (length <= 0) {
             throw new IllegalArgumentException("Длина UUID должна быть положительной.");
@@ -76,7 +75,7 @@ public class SUUID {
 
     private static void refreshEntropy() {
         synchronized (SECURE_RANDOM) {
-            SECURE_RANDOM.setSeed(SECURE_RANDOM.generateSeed(uuidByteLength)); // Используем переменную uuidByteLength
+            SECURE_RANDOM.setSeed(SECURE_RANDOM.generateSeed(uuidByteLength));
         }
     }
 
@@ -98,10 +97,9 @@ public class SUUID {
     }
 
     public static void main(String[] args) {
-        // Пример использования
         System.out.println("UUID с длиной по умолчанию (16 байт): " + generateId());
 
-        SUUID.setUuidByteLength(32); // Устанавливаем длину 32 байта
+        SUUID.setUuidByteLength(32);
         System.out.println("UUID с длиной 32 байта: " + generateId());
 
         System.out.println("Текущая длина UUID: " + SUUID.getUuidByteLength());
